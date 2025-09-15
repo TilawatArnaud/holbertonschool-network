@@ -2,8 +2,8 @@
 # Displays listening TCP/UDP and UNIX domain sockets with associated PID and program name
 
 echo "Active Internet connections (only servers)"
-ss -tulnp | grep LISTEN || echo "No listening internet sockets found or command failed."
+ss -tulnp | grep LISTEN
 
 echo
 echo "Active UNIX domain sockets (only servers)"
-ss -xlnp | grep LISTEN || echo "No listening UNIX domain sockets found or command failed."
+ss -xlnp | grep LISTEN
