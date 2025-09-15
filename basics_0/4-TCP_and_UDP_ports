@@ -3,7 +3,12 @@
 # Objectif: Afficher les sockets TCP/UDP en écoute avec PID et nom du programme
 
 echo "Active Internet connections (only servers)"
-ss -tulnp | grep LISTEN
+if ! ss -tulnp 2>/dev/null | grep LISTEN; then
+    echo "Error: Failed to list internet sockets." >&2
+fi
 
+echo ""
 echo "Active UNIX domain sockets (only servers)"
-ss -xlnp
+if ! ss -xlnp 2>/dev/null | grep LISTEN; then
+    echo "Error: Failed to list UNIX domain sockets." >&2
+fi
