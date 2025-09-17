@@ -1,9 +1,3 @@
 #!/usr/bin/env bash
-# Displays listening TCP/UDP and UNIX domain sockets with associated PID and program name
-
-echo "Active Internet connections (only servers)"
-ss -tulnp | grep LISTEN
-
-echo
-echo "Active UNIX domain sockets (only servers)"
-ss -xlnp | grep LISTEN
+# Bash script that display listening ports with PID and program names for listening sockets.
+netstat -a -p
